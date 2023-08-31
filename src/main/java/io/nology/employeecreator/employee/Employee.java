@@ -1,11 +1,9 @@
-package io.nology.employeecreator;
+package io.nology.employeecreator.employee;
 
 import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -76,19 +74,20 @@ public class Employee {
 		this.lastName = lastName;
 	}
 
-	public ContractType getContractType() {
+
+	public String getContractType() {
 		return contractType;
 	}
 
-	public void setContractType(ContractType contractType) {
+	public void setContractType(String contractType) {
 		this.contractType = contractType;
 	}
 
-	public PermanentType getPermanentType() {
+	public String getPermanentType() {
 		return permanentType;
 	}
 
-	public void setPermanentType(PermanentType permanentType) {
+	public void setPermanentType(String permanentType) {
 		this.permanentType = permanentType;
 	}
 
@@ -146,9 +145,8 @@ public class Employee {
 	
 	public Employee() {}
 
-	public Employee(String firstName, String middleName, String lastName, ContractType contractType,
-			PermanentType permanentType, Date startDate, Date endDate, Boolean onGoing, String email, String mobile,
-			int hours) {
+	public Employee(String firstName, String middleName, String lastName, String contractType, String permanentType,
+			Date startDate, Date endDate, Boolean onGoing, String email, String mobile, int hours) {
 		super();
 		this.firstName = firstName;
 		this.middleName = middleName;
@@ -161,7 +159,7 @@ public class Employee {
 		this.email = email;
 		this.mobile = mobile;
 		this.hours = hours;
-	};
-	
+	}
+
 	
 }
