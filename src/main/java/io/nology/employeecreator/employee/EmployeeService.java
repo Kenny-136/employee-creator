@@ -30,7 +30,7 @@ public class EmployeeService {
 	}
 	
 //	READ ALL Service
-	public List<Employee> getAllEmployee() {
+	public List<Employee> findAllEmployee() {
 		return employeeRepository.findAll();
 	}
 	
