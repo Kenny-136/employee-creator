@@ -1,19 +1,19 @@
 package io.nology.employeecreator.employee;
 
-import java.util.Date;
-
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotNull;
 
+import java.util.Date;
+
 public class CreateEmployeeDTO {
 
-	private enum ContractType {
+	public enum ContractType {
 		CONTRACT,
 		PERMANENT
 	};
 	
-	private enum PermanentType {
+	public enum PermanentType {
 		FULLTIME,
 		PARTTIME
 	};

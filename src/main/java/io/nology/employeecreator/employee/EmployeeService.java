@@ -49,5 +49,15 @@ public class EmployeeService {
 		this.employeeRepository.delete(maybeEmployee.get());
 		return true;
 	}
-	
+
+	public Optional<Employee> updateById(Long id, UpdateEmployeeDTO data) {
+		Optional<Employee> maybeEmployee = this.findById(id);
+
+		if(maybeEmployee.isPresent()) {
+			Employee existingEmployee = maybeEmployee.get();
+			modelMapper.map(data, existingEmployee);
+			return Optional.of(this.employeeRepository.save(existingEmployee));
+		}
+		return maybeEmployee;
+	}
 }
